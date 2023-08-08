@@ -1,0 +1,40 @@
+data = {
+    "productid": "1005",
+    "img": "https://assets.ajio.com/medias/sys_master/root/20230623/cm6c/6494c8c0d55b7d0c63a579fc/-473Wx593H-464455205-peach-MODEL.jpg",
+    "brand": "BULLEMER",
+    "productname": "Striped Henley T-shirt",
+    "price": "260",
+    "strikedprice": "999",
+    "discount": "74%",
+    "category": "Men"
+}
+data2 = {
+    "productid": "1006",
+    "img": "https://assets.ajio.com/medias/sys_master/root/20230609/zPsy/648317b142f9e729d7341554/-473Wx593H-466247989-black-MODEL.jpg",
+    "brand": "TOM HIDDLE",
+    "productname": "Graphic Print Loose Fit Round-Neck T-Shirt",
+    "price": "280",
+    "strikedprice": "1,499",
+    "discount": "80%",
+    "category": "Men"
+}
+data3 = {
+    "productid": "1007",
+    "img": "https://assets.ajio.com/medias/sys_master/root/20230623/FM5K/64953d2f42f9e729d78e377b/-473Wx593H-464852642-cream-MODEL.jpg",
+    "brand": "TULSATTVA",
+    "productname": "Floral Print Fit & Flare Dress with Waist Tie-Up",
+    "price": "856",
+    "strikedprice": "1,990",
+    "discount": "57%",
+    "category": "Women"
+}
+data4 = {
+    "productid": "1008",
+    "img": "https://assets.ajio.com/medias/sys_master/root/20230719/Tre8/64b7120ba9b42d15c960af59/-473Wx593H-466371328-charcoal-MODEL.jpg",
+    "brand": "BIBA",
+    "productname": "Printed Fit & Flare Dress with Smocked Detail",
+    "price": "280",
+    "strikedprice": "1,499",
+    "discount": "40%",
+    "category": "Women"
+}
