@@ -1,0 +1,17 @@
+.mainimg{
+    width: 100%;
+}
+.slider{
+    display: flex;
+    overflow:hidden;
+    transition-delay: 5s;
+    transform:translateX(100)
+
+}
+.shopcategory{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2%;
+
+}

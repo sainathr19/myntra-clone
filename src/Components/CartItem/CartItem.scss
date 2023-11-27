@@ -1,0 +1,96 @@
+.cart-item{
+    // margin: 10px;
+    display: flex;
+    height: 190px;
+    width: 600px;
+    border: 1px #eaeaec solid;
+    .cart-item-preview{
+        margin: 10px;
+        width:25%;
+        .cart-item-image{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .cart-item-data{
+        margin: 10px;
+        width: 75%;
+        h3,h4{
+            margin: 0%;
+            line-height: 1;
+        }
+        h3{
+            font-size: 16px;
+            font-weight: 700;
+            color: #282c3f;
+        }
+        h4{
+            margin: 5px;
+            margin-left: 0px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #535766;
+        }
+        .sold-by{
+            font-size: 12px;
+            color: #94969f;
+        }
+        .item-price{
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-left: 2px;
+            .mainprice{
+                font-size: 14px;
+                font-weight: 700;
+                color: #282c3f;
+            }
+            .strikedprice{
+                font-size: 12px;
+                text-decoration:line-through;
+                color: #7e818c;
+                font-weight: 400;
+            }
+            .pricediscount{
+                font-size: 11px;
+                color:#ff905a;
+            }
+        }
+        .item-return-info{
+            display: flex;
+            gap: 3px;
+            align-items: center;
+            .return-info-text{
+                font-size: 14px;
+                .return-time{
+                    font-weight: 600;
+                }
+            }
+        }
+
+        }
+}
+.item-selectors{
+    display: flex;
+    gap: 5px;
+    .cart-item-button{
+        height: 25px;
+        width: 75px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+.item-remove{
+    position:relative;
+    top: 15px;
+    left: 92%;
+    border: none;
+    background-color: white;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    font-size: 18px;
+}
+// #f5f5f6
+// #282c3f

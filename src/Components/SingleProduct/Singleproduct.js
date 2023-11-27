@@ -13,26 +13,42 @@ export default function Singleproduct() {
         </div>
         <div className="productbody">
           <div className="images">
-            <img
-              src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
-              alt="img"
-            />
-            <img
-              src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
-              alt="img"
-            />
-            <img
-              src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
-              alt="img"
-            />
-            <img
-              src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
-              alt="img"
-            />
-            <img
-              src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
-              alt="img"
-            />
+            <div className="image">
+              <img
+                src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
+                alt="img"
+              />
+            </div>
+            <div className="image">
+              <img
+                src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
+                alt="img"
+              />
+            </div>
+            <div className="image">
+              <img
+                src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
+                alt="img"
+              />
+            </div>
+            <div className="image">
+              <img
+                src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
+                alt="img"
+              />
+            </div>
+            <div className="image">
+              <img
+                src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
+                alt="img"
+              />
+            </div>
+            <div className="image">
+              <img
+                src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
+                alt="img"
+              />
+            </div>
           </div>
           <div className="info">
             <div className="infowrap">

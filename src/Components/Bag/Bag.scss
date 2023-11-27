@@ -1,0 +1,35 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px 0px 50px;
+    .middle-header{
+        font-size: 12px;
+        .step{
+            letter-spacing: 3px;
+            margin: 3px;
+        }
+    }
+    .right-header{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        font-size: 15px;
+    }
+    .active{
+        color:#20BD99;
+        border-bottom: 3px #20BD99 solid;
+    }
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    .payments{
+        height: 37px;
+        width: 60px;
+    }
+}
+.cart-container{
+    display: flex;
+    justify-content: center;
+}

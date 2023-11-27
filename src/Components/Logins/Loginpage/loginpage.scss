@@ -1,0 +1,95 @@
+.loginpage{
+    font-family: Assistant,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background-color: rgb(255, 235, 252);
+    height: 87vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .formcontainer{
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 500px;
+        height: 600px;
+        box-shadow: 5px;
+        .banner{
+            img{
+                width: 500px;;
+            }
+        }
+    }
+}
+.form{
+    margin: 9%;
+    //background-color: aqua;
+    .head{
+        margin-bottom: 24px;
+        b{
+            color: #424553;
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+    .mobileinput{
+        justify-content: left;
+        width: 350px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2%;
+
+        p{
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        .p2{
+            color: grey;
+            font-size: 15px;
+        }
+        input{
+            margin-left:5px ;
+            outline: none;
+            border: none;
+            height: 90%;
+            width: 100%;
+            align-items: center;
+        }
+        border: 1px solid #d4d5d9;
+
+    }
+    .loginbutton{
+        font-family: Assistant,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        cursor: pointer;
+        height: 40px;
+        width: 350px;
+        background-color:#ff3f6c;
+        color: white;
+        border: white;
+        border-radius:5px ;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 16px;
+    }
+}
+.terms{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #424553;
+    margin-bottom: 2%;
+
+}
+.trouble{
+    margin-top: 5%;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 12px;
+    color: #424553;
+}
+.helplinks{
+    color: #ff3f6c;
+    text-decoration: none;
+}

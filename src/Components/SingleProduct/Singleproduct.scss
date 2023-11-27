@@ -11,17 +11,30 @@
 .productbody{
     display: flex;
     .images{
-        padding: 0% 1% 1% 1%;
+        //background-color: #03a685;
+        //padding: 0% 1% 1% 1%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: left;
+        justify-content:center;
         gap: 3px;
-        width:60%;
+        width:65%;
+        .image{
+            width: 45%;
+            height: 400px;
+            overflow: hidden;
+            // width:45%;
+
+
+        }
         img{
-            margin: 5px;
-            background-color: rgb(138, 85, 20);
-            height: 450px;
-            width: 375px;
+            height:100%;
+            width:100%;
+            transition: all 1.5s;
+            // object-fit: cover;
+        }
+        img:hover{
+            cursor: pointer;
+            transform: scale(1.1);
         }
     }
     .info{

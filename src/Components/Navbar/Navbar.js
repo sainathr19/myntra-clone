@@ -1,14 +1,13 @@
 import React from "react";
 import "./Navbar.scss";
 import logo from "./myntra.png";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
-import Footer from "../Footer/Footer";
 export default function Navbar() {
   return (
     <>
@@ -66,12 +65,12 @@ export default function Navbar() {
       <div className="menudown">
         <p>Menudown</p>
       </div>
-      <div className="main">
+      {/* <div className="main">
         <Outlet />
       </div>
       <div className="footer">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 }
