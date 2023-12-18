@@ -1,6 +1,5 @@
 import "./Productpage.scss";
 import Product from "../Product/Product";
-import { Bold } from "lucide-react";
 export default function Productpage({ arr }) {
   return (
     <>

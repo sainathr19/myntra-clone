@@ -24,6 +24,7 @@
 .footer{
     display: flex;
     justify-content: center;
+    margin-top: 15px;
     .payments{
         height: 37px;
         width: 60px;
@@ -32,4 +33,96 @@
 .cart-container{
     display: flex;
     justify-content: center;
+    .cart{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+.cart-price-details{
+    margin-left: 15px;
+    // font-family: Assistant,Helvetica,Arial,sans-serif;
+    // font-family: 'Assistant', sans-serif;
+    width: 320px;
+    .coupons{
+        .coupons-line{
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 0%;
+            height: 45px;
+            button{
+                height: 30px;
+                width: 75px;
+                color: rgb(255, 63, 108);
+                border-color: rgb(255, 63, 108);
+                background-color: white;
+                border-radius: 5px;
+                font-weight: 600;
+            }
+            img{
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}
+.details-head{
+    font-weight: 600;
+    color: #535766;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.donate{
+    margin-bottom: 25px;
+    .donate-buttons{
+        display: flex;
+        gap: 20px;
+        margin-bottom: 10px;
+        .donate-button{
+            height: 30px;
+            width: 55px;
+            border: 5px #eaeaec solid;
+            border-radius: 15px;
+        }
+    }
+    .helplinks{
+        font-size: 12px;
+    }
+
+}
+.loginbutton{
+    font-family: Assistant,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    cursor: pointer;
+    height: 40px;
+    width: 350px;
+    background-color:#ff3f6c;
+    color: white;
+    border: white;
+    border-radius:5px ;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 1px;
+}
+.price-breakdown{
+    .breakdown-element{
+        display: flex;
+        justify-content: space-between;
+        height:30px;
+        color: #282c3f;
+        .helplinks{
+            font-size: 12px;
+        }
+    }
+    .total-element{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        font-size: 15px;
+        padding-top: 16px;
+        border-top: 1px solid #eaeaec;
+        color: #3e4152;
+        line-height: 16px;
+    }
 }

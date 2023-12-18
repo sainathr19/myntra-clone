@@ -17,6 +17,7 @@ import Loginpage from "./Components/Logins/Loginpage/Loginpage";
 import LoginOtp from "./Components/Logins/LoginOTP/Loginotp";
 import LoginWPass from "./Components/Logins/LoginWPass/LoginWPass";
 import Bag from "./Components/Bag/Bag";
+import Test from "./Components/reduxtest/test";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
         <Route path="/loginwpass" element={<LoginWPass />} />
       </Route>
       <Route path="/bag" element={<Bag />} />
+      <Route path="/test" element={<Test />} />
     </Route>
   )
 );

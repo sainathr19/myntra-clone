@@ -56,8 +56,11 @@ export default function Navbar() {
             <FavoriteBorderOutlinedIcon />
             <span>Wishlist</span>
           </Link>
-          <Link to="/" className="rightitem">
+          <Link to="/bag" className="rightitem">
+            {/* <div className="fake-div"> */}
+            {/* <p className="bagcount">0</p> */}
             <ShoppingBagOutlinedIcon />
+            {/* </div> */}
             <span>Bag</span>
           </Link>
         </div>

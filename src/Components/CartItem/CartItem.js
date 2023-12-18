@@ -1,6 +1,9 @@
 import React from "react";
 import "./CartItem.scss";
-export default function CartItem() {
+export default function CartItem(props) {
+  const buttonclick = (e) => {
+    console.log(e.target.value);
+  };
   return (
     <>
       <div className="cart-item">
@@ -20,7 +23,13 @@ export default function CartItem() {
             <button className="cart-item-button">
               Size : M <path fill-rule="evenodd" d="M0 0h6L3 3z"></path>
             </button>
-            <button className="cart-item-button">Qty : 1</button>
+            <button
+              value={props.value}
+              onClick={buttonclick}
+              className="cart-item-button"
+            >
+              Qty : 1
+            </button>
           </div>
           <div className="item-price">
             <p className="mainprice">₹999</p>
