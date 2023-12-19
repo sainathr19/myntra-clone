@@ -114,12 +114,17 @@
             .sizebottom{
                 display: flex;
                 gap: 15px;
-                button{
-                    height: 50px;
-                    width: 50px;
+                .sizebutton{
+                    height: 45px;
+                    width: 45px;
                     border-radius: 50%;
                     border: 1px solid #bfc0c6;
                     background-color: #fff;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+                .active{
+                    border: 2px solid #ff45f6;
                 }
             }
         }

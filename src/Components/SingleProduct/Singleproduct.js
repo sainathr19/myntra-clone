@@ -6,39 +6,56 @@ import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Product from "../Product/Product";
+import { addtobag } from "../../redux/Bag/BagSlice";
+import { useDispatch } from "react-redux";
 
 export default function Singleproduct() {
+  const [isLoading, SetisLoading] = useState(true);
   const [Pdata, setPdata] = useState({});
   const [Pimages, setPimages] = useState([]);
   const [Similar, setSimilar] = useState([]);
+  const sizes = ["XS", "S", "M", "L", "XL"];
+  const [curSize, setcurSize] = useState("XS");
   const { productid } = useParams();
+  const dispatch = useDispatch();
   const params = {
     productid: productid,
+  };
+  const addtobagb = () => {
+    const item = {
+      id: Pdata.productid,
+      size: curSize,
+      quantity: "1",
+    };
+    dispatch(addtobag({ item }));
   };
   useEffect(() => {
     axios.put("http://localhost:5000/getproductdata", params).then((res) => {
       setPdata(res.data);
-      axios
-        .get(process.env.REACT_APP_API_URL, {
-          params: { cat: Pdata.category },
-        })
-        .then((res) => {
-          setSimilar(res.data.slice(0, 10));
-        });
+      if (Pdata != []) {
+        axios
+          .get(process.env.REACT_APP_API_URL, {
+            params: { cat: Pdata.category },
+          })
+          .then((res) => {
+            setSimilar(res.data.slice(0, 10));
+          });
+      }
     });
     axios.put("http://localhost:5000/getproductimages", params).then((res) => {
       setPimages(res.data.images);
     });
-    console.log(Pdata.category);
+    SetisLoading(false);
   }, []);
   return (
     <>
+      {/* {isLoading && <p>Loading...</p>} */}
       <div className="singlepage">
         <div className="productbody">
           <div className="images">
-            {Pimages.map((i) => {
+            {Pimages.map((i, index) => {
               return (
-                <div className="image">
+                <div key={index} className="image">
                   <img src={i} alt="img" />
                 </div>
               );
@@ -66,15 +83,23 @@ export default function Singleproduct() {
                   <Link to="/"> Size Chart</Link>
                 </div>
                 <div className="sizebottom">
-                  <button type="button">XS</button>
-                  <button type="button">S</button>
-                  <button type="button">M</button>
-                  <button type="button">L</button>
-                  <button type="button">XL</button>
+                  {sizes.map((i, index) => {
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => setcurSize(i)}
+                        className={
+                          curSize === i ? "sizebutton active" : "sizebutton"
+                        }
+                      >
+                        {i}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
               <div className="bagoptions">
-                <button className="Linkaddtobag">
+                <button onClick={addtobagb} className="Linkaddtobag">
                   <div className="imagebg">
                     <ShoppingBagOutlinedIcon />
                   </div>

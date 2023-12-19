@@ -10,10 +10,12 @@ const BagSlice = createSlice({
   name: "bag",
   initialState,
   reducers: {
-    addtobag: (state) => {
+    addtobag: (state, { payload }) => {
+      // console.log(obj);
       state.count += 1;
-      state.items.push({ id: "100", quantity: 2, size: "L" });
+      state.items.push(payload.item);
       const response = axios.post("http://localhost:5000/addtobag", state);
+      console.log(response);
     },
   },
 });
