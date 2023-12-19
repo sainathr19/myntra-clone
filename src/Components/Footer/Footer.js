@@ -10,28 +10,28 @@ export default function Footer() {
           <div className="f">
             <h4>Online Shopping</h4>
             <div className="fitems">
-              <Link to="/" class="fitem">
+              <Link to="/" className="fitem">
                 Men
               </Link>
-              <Link to="/" class="fitem">
+              <Link to="/" className="fitem">
                 Women
               </Link>
-              <Link to="/" class="fitem">
+              <Link to="/" className="fitem">
                 Women
               </Link>
-              <Link to="/" class="fitem">
+              <Link to="/" className="fitem">
                 Kids
               </Link>
-              <Link to="/" class="fitem">
+              <Link to="/" className="fitem">
                 Home & Living
               </Link>
-              <Link to="/" class="fitem">
+              <Link to="/" className="fitem">
                 Beauty
               </Link>
-              <Link to="/" class="fitem">
+              <Link to="/" className="fitem">
                 Gift Cards
               </Link>
-              <Link to="/" class="fitem">
+              <Link to="/" className="fitem">
                 Myntra Insider
               </Link>
             </div>
@@ -106,14 +106,14 @@ export default function Footer() {
                 </Link>
                 <Link to="/">
                   <img
-                    class="twitter"
+                    className="twitter"
                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXR3aXR0ZXIiPjxwYXRoIGQ9Ik0yMiA0cy0uNyAyLjEtMiAzLjRjMS42IDEwLTkuNCAxNy4zLTE4IDExLjYgMi4yLjEgNC40LS42IDYtMkMzIDE1LjUuNSA5LjYgMyA1YzIuMiAyLjYgNS42IDQuMSA5IDQtLjktNC4yIDQtNi42IDctMy44IDEuMSAwIDMtMS4yIDMtMS4yeiIvPjwvc3ZnPg=="
                     alt="twitter"
                   />
                 </Link>
                 <Link to="/">
                   <img
-                    class="yt"
+                    className="yt"
                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXlvdXR1YmUiPjxwYXRoIGQ9Ik0yLjUgMTdhMjQuMTIgMjQuMTIgMCAwIDEgMC0xMCAyIDIgMCAwIDEgMS40LTEuNCA0OS41NiA0OS41NiAwIDAgMSAxNi4yIDBBMiAyIDAgMCAxIDIxLjUgN2EyNC4xMiAyNC4xMiAwIDAgMSAwIDEwIDIgMiAwIDAgMS0xLjQgMS40IDQ5LjU1IDQ5LjU1IDAgMCAxLTE2LjIgMEEyIDIgMCAwIDEgMi41IDE3Ii8+PHBhdGggZD0ibTEwIDE1IDUtMy01LTN6Ii8+PC9zdmc+"
                     alt="yt"
                   />
@@ -142,7 +142,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div class="fbottom">
+        <div className="fbottom">
           <div className="one">
             <p>In case of any concern,</p>
             <Link className="Link" to="">

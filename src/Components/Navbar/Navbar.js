@@ -27,7 +27,7 @@ export default function Navbar() {
               KIDS
             </Link>
             <Link to="/" className="catitems">
-              HOME & LIVING
+              HOME
             </Link>
             <Link to="/" className="catitems">
               BEAUTY

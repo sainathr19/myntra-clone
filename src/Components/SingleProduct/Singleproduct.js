@@ -5,10 +5,12 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Product from "../Product/Product";
 
 export default function Singleproduct() {
   const [Pdata, setPdata] = useState({});
   const [Pimages, setPimages] = useState([]);
+  const [Similar, setSimilar] = useState([]);
   const { productid } = useParams();
   const params = {
     productid: productid,
@@ -16,19 +18,22 @@ export default function Singleproduct() {
   useEffect(() => {
     axios.put("http://localhost:5000/getproductdata", params).then((res) => {
       setPdata(res.data);
+      axios
+        .get(process.env.REACT_APP_API_URL, {
+          params: { cat: Pdata.category },
+        })
+        .then((res) => {
+          setSimilar(res.data.slice(0, 10));
+        });
     });
     axios.put("http://localhost:5000/getproductimages", params).then((res) => {
       setPimages(res.data.images);
     });
-    console.log(Pdata);
-    console.log(Pimages);
+    console.log(Pdata.category);
   }, []);
   return (
     <>
       <div className="singlepage">
-        <div className="path">
-          <p>Path</p>
-        </div>
         <div className="productbody">
           <div className="images">
             {Pimages.map((i) => {
@@ -43,7 +48,6 @@ export default function Singleproduct() {
             <div className="infowrap">
               <h3 className="brand">{Pdata.brand}</h3>
               <h4 className="name">{Pdata.productname}</h4>
-              <div className="ratings">Ratings</div>
               <hr />
               <div className="price">
                 <span className="mainprice">
@@ -93,6 +97,15 @@ export default function Singleproduct() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="similarproducts">
+        <span className="sim-head">SIMILAR PRODUCTS</span>
+        <hr />
+        <div className="items">
+          {Similar.map((i) => {
+            return <Product {...i} />;
+          })}
         </div>
       </div>
     </>

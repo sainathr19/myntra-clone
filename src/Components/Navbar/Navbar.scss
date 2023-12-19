@@ -4,12 +4,10 @@
     justify-content: space-around;
     height: 70px;
     width: 100%;
-    //position: fixed;
-    //top: 0;
-
     box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
         .logo{
         margin: 20px;
+        // background-color: aqua;
     }
     .left{
         display: flex;
@@ -93,7 +91,7 @@
     }
 }
 .menudown{
-    background-color: aqua;
+    background-color: rgb(11, 12, 12);
     width: 1110px;
     height: 450px;
     margin-left: 100px;

@@ -6,10 +6,15 @@ export default function Menpage() {
   const [response, setresponse] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:5000/men").then((res) => {
-      console.log(res.data);
-      setresponse(res.data);
-    });
+    console.log(process.env.REACT_APP_API_URL);
+    axios
+      .get(process.env.REACT_APP_API_URL, { params: { cat: "Men" } })
+      .then((res) => {
+        setresponse(res.data);
+      });
+    console.log(response);
   }, []);
   return <Productpage arr={response} />;
 }
+
+// axios.get("http://127.0.0.1:5000/get-products", {params: {cat: "Kids",},})

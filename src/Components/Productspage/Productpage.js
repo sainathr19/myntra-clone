@@ -14,9 +14,9 @@ export default function Productpage({ arr }) {
           </h4>
         </div>
         <div className="wrapper">
-          <div className="filter">
+          {/* <div className="filter">
             <p>Filter</p>
-          </div>
+          </div> */}
           <div className="innerwrap">
             <div className="sort">
               <div className="select">
