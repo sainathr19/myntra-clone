@@ -6,7 +6,7 @@ export default function Loginpage() {
   const navigate = useNavigate();
   const loginsubmit = () => {
     setTimeout(() => {
-      navigate(`/loginotp`);
+      navigate(`/auth/login-verif`);
     }, 1000);
   };
   return (

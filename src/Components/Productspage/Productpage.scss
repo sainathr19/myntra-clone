@@ -49,16 +49,18 @@
             }
         }
     }
-    .items{
-        // background-color: aqua;
-        width: 100%;
-        display: flex;
-        margin-left: 1%;
-        gap: 25px;
-        flex-wrap: wrap;
-        height: fit-content;
-        margin-bottom: 25px;
-    }
+
+        .items{
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            // margin-left: 1%;
+            gap: 25px;
+            flex-wrap: wrap;
+            height: fit-content;
+            margin-bottom: 25px;
+        }
 }
 .upper{
     font-size: 14px;

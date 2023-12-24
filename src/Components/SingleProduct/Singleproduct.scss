@@ -124,7 +124,7 @@
                     cursor: pointer;
                 }
                 .active{
-                    border: 2px solid #ff45f6;
+                    border: 3px solid #ff45f6;
                 }
             }
         }
@@ -233,5 +233,26 @@
         flex-wrap: wrap;
         height: fit-content;
         margin-bottom: 25px;
+    }
+}
+
+.toast-message{
+    margin-top:75px;
+    width: 175px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #535665;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .toast-image{
+        height:42px;
+
+    }
+    span{
+        font-family: 'Assistant', sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: white;
     }
 }

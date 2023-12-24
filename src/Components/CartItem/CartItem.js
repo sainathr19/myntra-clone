@@ -1,26 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CartItem.scss";
+import { useDispatch } from "react-redux";
+import { changeqty, removefrombag } from "../../redux/Bag/BagSlice";
+import { bag } from "../../redux/Bag/BagSlice";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import axios from "axios";
+
 export default function CartItem(props) {
+  const [pdata, setpdata] = useState({});
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/getoneproduct", {
+        params: { productid: props.id },
+      })
+      .then((res) => {
+        setpdata(res.data);
+        console.log(res.data);
+      });
+  }, []);
   const buttonclick = (e) => {
     console.log(e.target.value);
   };
+  const dispatch = useDispatch();
+  const bagitems = useSelector(bag);
   return (
     <>
       <div className="cart-item">
-        <button className="item-remove">X</button>
+        <button
+          onClick={() => {
+            dispatch(removefrombag({ id: props.id }));
+          }}
+          className="item-remove"
+        >
+          X
+        </button>
         <div className="cart-item-preview">
-          <img
-            className="cart-item-image"
-            src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/2,backgroundColor=f2f2f2,modelId=1543,width=800,height=800.png"
-            alt="/"
-          />
+          <img className="cart-item-image" src={pdata.img} alt="/" />
         </div>
         <div className="cart-item-data">
-          <h3>Roadster</h3>
-          <h4>Men Navy Solid Round Neck T-Shirt</h4>
+          <h3>{pdata.brand}</h3>
+          <h4>{pdata.productname}</h4>
           <p className="sold-by">Sold by : Trunet Commerce</p>
           <div className="item-selectors">
-            <button className="cart-item-button">
+            <button
+              onClick={() => {
+                dispatch(changeqty());
+                console.log(bagitems.items);
+              }}
+              className="cart-item-button"
+            >
               Size : M <path fill-rule="evenodd" d="M0 0h6L3 3z"></path>
             </button>
             <button

@@ -53,9 +53,12 @@ app.get("/get-products", async (req, res) => {
 //   res.json(arr);
 // });
 app.post("/addtobag", async (req, res) => {
-  console.log(req.body);
-  const result = await bagdata.insertOne(req.body);
-  res.json(result);
+  const c = await bagdata.countDocuments({ username: req.body.username });
+  if (c > 0) {
+    await bagdata.replaceOne({ username: req.body.username }, req.body);
+  } else {
+    await bagdata.insertOne(req.body);
+  }
 });
 
 app.put("/getproductdata", async (req, res) => {
@@ -68,8 +71,26 @@ app.put("/getproductimages", async (req, res) => {
   res.json(r);
 });
 
+app.get("/getbag", async (req, res) => {
+  r = await bagdata.findOne(
+    { username: req.query.username },
+    { projection: { _id: 0 } }
+  );
+  res.json(r);
+});
+app.get("/getoneproduct", async (req, res) => {
+  r = await productsdata.findOne(
+    { productid: req.query.productid },
+    { projection: { _id: 0 } }
+  );
+  res.json(r);
+});
 app.get("/testapi", async (req, res) => {
   // console.log(req.params);
   console.log(req.query.cat);
   res.json("okk");
+});
+
+app.post("/login", async (req, res) => {
+  console.log(req.body);
 });

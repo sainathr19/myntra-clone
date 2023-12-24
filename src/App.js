@@ -30,9 +30,9 @@ const router = createBrowserRouter(
         <Route path="/men/:productid" element={<Singleproduct />} />
       </Route>
       <Route path="/" element={<LoginLayout />}>
-        <Route path="/login" element={<Loginpage />} />
-        <Route path="/loginotp" element={<LoginOtp />} />
-        <Route path="/loginwpass" element={<LoginWPass />} />
+        <Route path="/auth/login" element={<Loginpage />} />
+        <Route path="/auth/login-verif" element={<LoginOtp />} />
+        <Route path="/auth/loginwpass" element={<LoginWPass />} />
       </Route>
       <Route path="/bag" element={<Bag />} />
       <Route path="/test" element={<Test />} />

@@ -8,9 +8,12 @@ import { useEffect, useState } from "react";
 import Product from "../Product/Product";
 import { addtobag } from "../../redux/Bag/BagSlice";
 import { useDispatch } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
+import { bag } from "../../redux/Bag/BagSlice";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 export default function Singleproduct() {
-  const [isLoading, SetisLoading] = useState(true);
+  // const [isLoading, SetisLoading] = useState(true);
   const [Pdata, setPdata] = useState({});
   const [Pimages, setPimages] = useState([]);
   const [Similar, setSimilar] = useState([]);
@@ -18,16 +21,34 @@ export default function Singleproduct() {
   const [curSize, setcurSize] = useState("XS");
   const { productid } = useParams();
   const dispatch = useDispatch();
+  const bagitems = useSelector(bag);
   const params = {
     productid: productid,
   };
   const addtobagb = () => {
-    const item = {
-      id: Pdata.productid,
-      size: curSize,
-      quantity: "1",
-    };
-    dispatch(addtobag({ item }));
+    if (
+      bagitems.items[Pdata.productid] &&
+      bagitems.items[Pdata.productid].size === curSize
+    ) {
+      toast.custom((t) => (
+        <div className="toast-message">
+          <span>ITEM ALREADY IN BAG</span>
+        </div>
+      ));
+    } else {
+      const item = {
+        id: Pdata.productid,
+        size: curSize,
+        quantity: "1",
+      };
+      dispatch(addtobag({ item }));
+      toast.custom((t) => (
+        <div className="toast-message">
+          <img className="toast-image" src={Pimages[0]} alt="img" />
+          <span>ADDED TO BAG</span>
+        </div>
+      ));
+    }
   };
   useEffect(() => {
     axios.put("http://localhost:5000/getproductdata", params).then((res) => {
@@ -45,11 +66,12 @@ export default function Singleproduct() {
     axios.put("http://localhost:5000/getproductimages", params).then((res) => {
       setPimages(res.data.images);
     });
-    SetisLoading(false);
+    // SetisLoading(false);
   }, []);
   return (
     <>
       {/* {isLoading && <p>Loading...</p>} */}
+      <Toaster position="top-right" reverseOrder={false} />
       <div className="singlepage">
         <div className="productbody">
           <div className="images">
@@ -128,7 +150,7 @@ export default function Singleproduct() {
         <span className="sim-head">SIMILAR PRODUCTS</span>
         <hr />
         <div className="items">
-          {Similar.map((i) => {
+          {Similar.map((i, index) => {
             return <Product {...i} />;
           })}
         </div>
