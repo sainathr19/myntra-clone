@@ -6,9 +6,10 @@ export default function Menpage() {
   const [response, setresponse] = useState([]);
 
   useEffect(() => {
-    console.log(process.env.REACT_APP_API_URL);
     axios
-      .get(process.env.REACT_APP_API_URL, { params: { cat: "Men" } })
+      .get(process.env.REACT_APP_API_BASE_URL + "/get-products", {
+        params: { cat: "Men" },
+      })
       .then((res) => {
         setresponse(res.data);
       });
