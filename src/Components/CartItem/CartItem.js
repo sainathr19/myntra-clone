@@ -10,7 +10,7 @@ export default function CartItem(props) {
   const [pdata, setpdata] = useState({});
   useEffect(() => {
     axios
-      .get("http://localhost:5000/getoneproduct", {
+      .get(process.env.REACT_APP_API_BASE_URL + "/getoneproduct", {
         params: { productid: props.id },
       })
       .then((res) => {

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-const temp = await axios.get("http://localhost:5000/getbag", {
+const temp = await axios.get(process.env.REACT_APP_API_BASE_URL + "/getbag", {
   params: { username: "sainathr19" },
 });
 const BagSlice = createSlice({
@@ -14,20 +14,20 @@ const BagSlice = createSlice({
         quantity: payload.item.quantity,
         size: payload.item.size,
       };
-      axios.post("http://localhost:5000/addtobag", state);
+      axios.post(process.env.REACT_APP_API_BASE_URL + "/addtobag", state);
     },
     changeqty: (state) => {
       state.items[0].quantity += 1;
       // state.items.forEach((item,index)=>{
 
       // })
-      axios.post("http://localhost:5000/addtobag", state);
+      axios.post(process.env.REACT_APP_API_BASE_URL + "/addtobag", state);
     },
     removefrombag: (state, { payload }) => {
       console.log("delete started");
       state.count -= 1;
       delete state.items[payload.id];
-      axios.post("http://localhost:5000/addtobag", state);
+      axios.post(process.env.REACT_APP_API_BASE_URL + "/addtobag", state);
     },
   },
 });

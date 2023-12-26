@@ -61,16 +61,20 @@ export default function Singleproduct() {
     }
   };
   useEffect(() => {
-    axios.put("http://localhost:5000/getproductdata", params).then((res) => {
-      setPdata(res.data);
-    });
-    axios.put("http://localhost:5000/getproductimages", params).then((res) => {
-      setPimages(res.data.images);
-    });
+    axios
+      .put(process.env.REACT_APP_API_BASE_URL + "/getproductdata", params)
+      .then((res) => {
+        setPdata(res.data);
+      });
+    axios
+      .put(process.env.REACT_APP_API_BASE_URL + "/getproductimages", params)
+      .then((res) => {
+        setPimages(res.data.images);
+      });
     setTimeout(() => {
       setloading(false);
       axios
-        .get("http://localhost:5000/get-similar", {
+        .get(process.env.REACT_APP_API_BASE_URL + "/get-similar", {
           params: { id: productid },
         })
         .then((res) => {
