@@ -9,7 +9,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 require("dotenv").config();
 
-const uri = process.env.MONGO_URI;
+const uri =
+  "mongodb+srv://sainath:sainath@cluster0.mez8kyv.mongodb.net/?retryWrites=true&w=majority";
 var client = new MongoClient(uri);
 const database = client.db("myntra");
 const productsdata = database.collection("productsdata");
