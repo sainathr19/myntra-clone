@@ -18,13 +18,13 @@ export default function Navbar() {
         </Link>
         <div className="left">
           <div className="category">
-            <Link to="/men" className="catitems">
+            <Link to="/shop/men" className="catitems">
               MEN
             </Link>
-            <Link to="/women" className="catitems">
+            <Link to="/shop/women" className="catitems">
               WOMEN
             </Link>
-            <Link to="/kids" className="catitems">
+            <Link to="/shop/kids" className="catitems">
               KIDS
             </Link>
             <Link to="/" className="catitems">

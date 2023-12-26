@@ -14,7 +14,21 @@ export default function Menpage() {
       });
     console.log(response);
   }, []);
-  return <Productpage arr={response} />;
+  return (
+    <>
+      <h4
+        style={{
+          textAlign: "center",
+          fontSize: "30px",
+          fontWeight: "300",
+          // fontFamily: "Assistant, sans-serif",
+        }}
+      >
+        Men
+      </h4>
+      <Productpage arr={response} />
+    </>
+  );
 }
 
 // axios.get("http://127.0.0.1:5000/get-products", {params: {cat: "Kids",},})

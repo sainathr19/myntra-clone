@@ -18,5 +18,19 @@ export default function Womenpage() {
         setresponse(res.data);
       });
   }, []);
-  return <Productpage arr={response} />;
+  return (
+    <>
+      <h4
+        style={{
+          textAlign: "center",
+          fontSize: "30px",
+          fontWeight: "300",
+          // fontFamily: "Assistant, sans-serif",
+        }}
+      >
+        Women
+      </h4>
+      <Productpage arr={response} />
+    </>
+  );
 }

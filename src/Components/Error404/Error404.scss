@@ -1,0 +1,36 @@
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    .head1{
+        font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        font-size: 35px;
+        color: #282c3f;
+        font-weight: 200;
+        margin-bottom: 0;
+    }
+    .head2{
+        color: #94969f;
+        font-size: 14px;
+    }
+    .search-bar{
+        input{
+        height: 45px;
+        width: 550px;
+        border: 1px solid #ccc;
+        padding: 0px;
+
+        }
+        button{
+            font-size: 15px;
+            font-weight: 600;
+            height: 45px;
+            width: 75px;
+            color: #3466e8;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+    }
+}

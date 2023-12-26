@@ -27,6 +27,15 @@ app.get("/get-products", async (req, res) => {
   }
   res.json(arr);
 });
+app.get("/get-similar", async (req, res) => {
+  let arr = [];
+  x = await productsdata.findOne({ productid: req.query.id });
+  r = await productsdata.find({ category: x.category });
+  for await (const doc of r) {
+    arr.push(doc);
+  }
+  res.json(arr);
+});
 
 // app.get("/men", async (req, res) => {
 //   let arr = [];

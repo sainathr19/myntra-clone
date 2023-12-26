@@ -128,7 +128,7 @@ export default function Homepage() {
           </Link>
           <Link to="" className="slideritem"></Link>
         </div>
-        <img
+        {/* <img
           className="mainimg"
           src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/e773974d-4748-48dd-9f93-d6b9808a70581691152509520-Rakshabandhan-Gifts-This-Way.png"
           alt=""
@@ -142,7 +142,7 @@ export default function Homepage() {
           className="mainimg"
           src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/d6da5611-8691-427c-975b-4a733e75112c1691152509500-Namaste-Autumn.png"
           alt=""
-        />
+        /> */}
       </div>
     </>
   );

@@ -197,10 +197,10 @@
                     outline: none;
                     border: none;
                     width: 100%;
-                    font-size: 16px;
+                    font-size: 14px;
                     padding: 10px;
                 }
-                .button{
+                .pincode-button{
                     outline: none;
                     border: none;
                     background-color: #fff;
@@ -209,6 +209,7 @@
                     margin-right: 15px;
                     color:#ff3e6c;
                     text-decoration: none;
+                    cursor: pointer;
                 }
             }
         }

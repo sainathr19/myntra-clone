@@ -11,14 +11,17 @@ import { useDispatch } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 import { bag } from "../../redux/Bag/BagSlice";
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import Loader from "../Loader/Loader";
 
 export default function Singleproduct() {
-  // const [isLoading, SetisLoading] = useState(true);
+  const [loading, setloading] = useState(true);
+  const [similarload, setsimilarload] = useState(false);
   const [Pdata, setPdata] = useState({});
   const [Pimages, setPimages] = useState([]);
   const [Similar, setSimilar] = useState([]);
   const sizes = ["XS", "S", "M", "L", "XL"];
   const [curSize, setcurSize] = useState("XS");
+  const [pincode, setPincode] = useState("");
   const { productid } = useParams();
   const dispatch = useDispatch();
   const bagitems = useSelector(bag);
@@ -50,27 +53,35 @@ export default function Singleproduct() {
       ));
     }
   };
+  const checkpincode = () => {
+    if (pincode.length === 6) {
+      console.log("valid");
+    } else {
+      console.log("invalid");
+    }
+  };
   useEffect(() => {
     axios.put("http://localhost:5000/getproductdata", params).then((res) => {
       setPdata(res.data);
-      if (Pdata != []) {
-        axios
-          .get(process.env.REACT_APP_API_URL, {
-            params: { cat: Pdata.category },
-          })
-          .then((res) => {
-            setSimilar(res.data.slice(0, 10));
-          });
-      }
     });
     axios.put("http://localhost:5000/getproductimages", params).then((res) => {
       setPimages(res.data.images);
     });
-    // SetisLoading(false);
+    setTimeout(() => {
+      setloading(false);
+      axios
+        .get("http://localhost:5000/get-similar", {
+          params: { id: productid },
+        })
+        .then((res) => {
+          setSimilar(res.data.slice(0, 10));
+        });
+      setsimilarload(true);
+    }, 500);
   }, []);
   return (
     <>
-      {/* {isLoading && <p>Loading...</p>} */}
+      {loading && <Loader />}
       <Toaster position="top-right" reverseOrder={false} />
       <div className="singlepage">
         <div className="productbody">
@@ -138,23 +149,33 @@ export default function Singleproduct() {
                   <LocalShippingOutlinedIcon />
                 </div>
                 <div className="delbottom">
-                  <input placeholder="Enter Pincode" type="text" />
-                  <Link className="button">Check</Link>
+                  <input
+                    onChange={(e) => {
+                      setPincode(e.target.value);
+                    }}
+                    placeholder="Enter Pincode"
+                    type="text"
+                  />
+                  <button onClick={checkpincode} className="pincode-button">
+                    Check
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="similarproducts">
-        <span className="sim-head">SIMILAR PRODUCTS</span>
-        <hr />
-        <div className="items">
-          {Similar.map((i, index) => {
-            return <Product {...i} />;
-          })}
+      {similarload && (
+        <div className="similarproducts">
+          <span className="sim-head">SIMILAR PRODUCTS</span>
+          <hr />
+          <div className="items">
+            {Similar.map((i, index) => {
+              return <Product {...i} />;
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

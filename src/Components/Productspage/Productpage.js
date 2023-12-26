@@ -5,20 +5,20 @@ export default function Productpage({ arr }) {
     <>
       <div className="products">
         <div className="upper">
-          <h4>
+          {/* <h4>
             Home / Clothing{" "}
             {window.location.pathname.toString().charAt(0) +
               " " +
               window.location.pathname.toString().charAt(1).toUpperCase() +
               window.location.pathname.toString().toLowerCase().slice(2)}
-          </h4>
+          </h4> */}
         </div>
         <div className="wrapper">
           {/* <div className="filter">
             <p>Filter</p>
           </div> */}
           <div className="innerwrap">
-            <div className="sort">
+            {/* <div className="sort">
               <div className="select">
                 <select name="sortby" id="sortby">
                   <option value="1" selected>
@@ -43,8 +43,8 @@ export default function Productpage({ arr }) {
                     Customer Rating
                   </option>
                 </select>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
             <div className="items">
               {arr.map((i) => {
                 return <Product {...i} />;
