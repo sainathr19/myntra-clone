@@ -1,5 +1,10 @@
 .Link{
     text-decoration: none;
+    @media (max-width:480px){
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }
 .item{
     width: 210px;

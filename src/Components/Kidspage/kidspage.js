@@ -8,7 +8,7 @@ export default function Kidspage() {
 
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_API_URL, {
+      .get(process.env.REACT_APP_API_BASE_URL + "/get-products", {
         params: {
           cat: "Kids",
         },
